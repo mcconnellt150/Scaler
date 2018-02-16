@@ -18,3 +18,6 @@ choco install webdeploy /y
 
 Write-Host "installing urlrewrite..."
 choco install urlrewrite /y
+
+$file = "$env:windir\System32\drivers\etc\hosts"
+"172.30.2.100 spark-octo.equator-live.com" | Add-Content -PassThru $file
