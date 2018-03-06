@@ -1,14 +1,8 @@
-pparam (
-    [parameter()]
-    [ValidateNotNullOrEmpty()]
-    [String]$NewRelicLicenseKey
-)
+Write-Host "Installing Octopus Deploy DSC Extension..."
+.\Install-OctopusDSC.ps1
 
 Write-Host "Installing Chocolatey..."
 .\install.ps1
-
-Write-Host "Installing Octopus Deploy DSC Extension..."
-.\Install-OctopusDSC.ps1
 
 Write-Host "Installing Roles..."
 Import-Csv .\Roles.csv | foreach{Add-WindowsFeature $_.name  }
